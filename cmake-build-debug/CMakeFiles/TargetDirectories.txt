@@ -1,0 +1,3 @@
+/home/luchdotcom/CppSTL/STL/cmake-build-debug/CMakeFiles/STL.dir
+/home/luchdotcom/CppSTL/STL/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/luchdotcom/CppSTL/STL/cmake-build-debug/CMakeFiles/rebuild_cache.dir
