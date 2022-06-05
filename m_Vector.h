@@ -17,13 +17,25 @@ class m_Vector
 public:
     explicit m_Vector(ull = 100);
 
+    explicit m_Vector(ull *arr);
+
+    ~m_Vector()
+    {
+        delete[] arr;
+    }
+
     bool isEmpty();
 
     ull size();
+
     ull push_back(T);
+
     ull pop_back();
+
     void at(unsigned index);
+
     T front();
+
     T &operator[](ull);
 
     class iter
@@ -100,13 +112,16 @@ ull m_Vector<T>::push_back(T itam)
 template<typename T>
 ull m_Vector<T>::pop_back()
 {
-    return arr[length-- - 1];
+    if (isEmpty()) {
+        return 0;
+    }
+    arr[length--];
 }
 
 template<typename T>
 T &m_Vector<T>::operator[](ull index)
 {
-    if (index >= length){
+    if (index >= length) {
         std::cout << "Error: Array index ot of range";
         exit(0);
     }
@@ -128,8 +143,8 @@ typename m_Vector<T>::iter m_Vector<T>::end() const
 template<typename T>
 void m_Vector<T>::at(unsigned int index)
 {
-    if (index >= size()){
-        std::cout << "ERROR: out of range index >= size()"<< index , size();
+    if (index >= size()) {
+        std::cout << "ERROR: out of range index >= size()" << index, size();
     }
 }
 
@@ -137,6 +152,12 @@ template<typename T>
 T m_Vector<T>::front()
 {
     return *arr;
+}
+
+template<typename T>
+m_Vector<T>::m_Vector(ull *arr) : arr(new T[*arr]), capacity(capacity), length(0)
+{
+
 }
 
 
