@@ -1,6 +1,3 @@
-//
-// Created by luchdotcom on 20.04.23.
-//
 #include "m_DLLis//
 // Created by Lachezar on 13.11.2020 г..
 //
